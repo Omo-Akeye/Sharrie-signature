@@ -63,7 +63,7 @@ export const data: Product[] = [
     {
         id: 7,
         src: product7,
-        name: 'Firming Body Oil',
+        name: 'Body Oil',
         price: 35.00,
         description: 'Experience the firming effects of our Firming Body Oil. This luxurious oil is formulated with natural ingredients that help to tighten and tone your skin, improving its elasticity and leaving it feeling firm and supple.'
     },

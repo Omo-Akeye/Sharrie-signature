@@ -24,14 +24,14 @@ export default function Product({ products }: ProductProps) {
               alt=""
               className="xl:w-[413px] xl:h-80 object-cover md:w-96 md:h-72 w-40 h-40  rounded-[16px]"
             />
-            <div className="border-t-[1px] mt-6 pt-3 flex justify-between md:px-3">
+            <div className="border-t-[1px] mt-6 pt-3 flex justify-between md:px-3 flex-shrink-0">
               <span>
                 <p className="text-[#797A7B] md:text-base text-xs">{product.name}</p>
                 <p className="font-medium text-sm md:text-base">${product.price}.00</p>
               </span>
-              <div>
+            
                 <CartBtn />
-              </div>
+              
             </div>
           </div>
           </Link>

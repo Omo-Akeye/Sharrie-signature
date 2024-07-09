@@ -1,5 +1,3 @@
-
-
 interface Link {
   text: string;
   url?: string;
@@ -14,7 +12,7 @@ interface FooterSectionProps {
 function FooterSection ({ title, links }:FooterSectionProps) {
   return (
     <li className="flex-1">
-      <p className="text-[#818181] mb-8">{title}</p>
+      <p className="text-[#818181] md:mb-8 mb-6">{title}</p>
       {links.map((link, index) => (
         <p key={index} className="mb-3">
           {link.url ? (

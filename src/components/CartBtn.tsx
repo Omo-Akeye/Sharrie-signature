@@ -18,7 +18,7 @@ export default function CartBtn() {
           Item added to cart!
         </div>
       )}
-    <button className="xl:px-12 py-1 md:py-2 px-1 border-[2px] border-[#408C2B] md:px-6 rounded-md text-[#408C2B] text-[8px] md:text-base" onClick={addToCart}>
+    <button className="xl:px-12 py-1 md:py-2 px-1 border-[2px] border-[#408C2B] md:px-6 rounded-md text-[#408C2B] text-[8px] md:text-base flex-shrink-0" onClick={addToCart}>
         Add to cart
     </button>
       </>

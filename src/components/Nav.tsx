@@ -60,7 +60,7 @@ export default function Nav() {
 
 
     {navToggle && 
-    <main className='w-60 h-64 bg-white fixed ml-[10%]'>
+    <main className='w-60 h-64 bg-white fixed ml-[40px] shadow-lg'>
     <div className='flex ml-[10%] mt-14 mb-6 gap-1 text-sm font-light items-center'>
       <img src={x} alt="" className='w-3 h-3 cursor-pointer' onClick={()=>setNavToggle(!navToggle)} />
       <p>Menu</p>
