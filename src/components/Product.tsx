@@ -1,32 +1,42 @@
-import { data } from "../data/data"
-import CartBtn from "./CartBtn"
-
+import { Link } from "react-router-dom";
+import CartBtn from "./CartBtn";
 
 interface Product {
-    id: number;
-    name: string;
-    price: number;
-    src: string;
-  }
+  id: number;
+  name: string;
+  price: number;
+  src: string;
+}
 
-export default function Product() {
+interface ProductProps {
+  products: Product[];
+}
+
+export default function Product({ products }: ProductProps) {
   return (
     <div>
-        <ul className="grid grid-cols-3 gap-5 text-sm">
-            {data.map((product:Product)=> 
-            <li key={product.id}>
-                <img src={product.src} alt="" className="xl:w-[413px] xl:h-80 object-cover w-96 h-72"/>
-                <div className="border-t-[1px] mt-6 pt-3 flex justify-between px-3">
-                    <span >
-                        <p className="text-[#797A7B] ">{product.name}</p>
-                        <p className="font-medium">${product.price}.00</p>
-                    </span>
-                    <div>
-                        <CartBtn/>
-                    </div>
-                </div>
-            </li>)}
-        </ul>
+      <section className="grid md:grid-cols-3 grid-cols-2 md:gap-5 gap-4 text-sm">
+        {products.map((product: Product) => (
+             <Link to={`/${product.name}`} key={product.id}>
+          <div >
+            <img
+              src={product.src}
+              alt=""
+              className="xl:w-[413px] xl:h-80 object-cover md:w-96 md:h-72 w-40 h-40  rounded-[16px]"
+            />
+            <div className="border-t-[1px] mt-6 pt-3 flex justify-between md:px-3">
+              <span>
+                <p className="text-[#797A7B] md:text-base text-xs">{product.name}</p>
+                <p className="font-medium text-sm md:text-base">${product.price}.00</p>
+              </span>
+              <div>
+                <CartBtn />
+              </div>
+            </div>
+          </div>
+          </Link>
+        ))}
+      </section>
     </div>
-  )
+  );
 }

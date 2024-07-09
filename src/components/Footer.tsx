@@ -44,8 +44,8 @@ interface FooterProps {
 export default function Footer({ sections }:FooterProps)  {
   return (
     <>
-    <div className="border-y-[1px] border-[#DFDFDF] w-full py-24">
-      <ul className="flex justify-between w-[80%] m-auto">
+    <div className="border-y-[1px] border-[#DFDFDF] w-full md:py-24 py-12">
+      <ul className="md:flex justify-between w-[80%] m-auto">
         {sections.map((section, index) => (
           <FooterSection key={index} title={section.title} links={section.links} />
         ))}
@@ -55,8 +55,8 @@ export default function Footer({ sections }:FooterProps)  {
     </div>
 
     <div className="mt-8">
-        <div className="w-[80%] m-auto flex justify-between">
-          <p>sharrie’s signature 2020</p>
+        <div className="w-[80%] m-auto flex justify-between max-md:text-[10px]">
+          <p>&copy; sharrie’s signature 2020</p>
           <span className="flex gap-5">
             <p>Legal & Privacy</p>
             <p>Cookies</p>
@@ -64,7 +64,7 @@ export default function Footer({ sections }:FooterProps)  {
         </div>
       </div>
 
-      <h2 className='text-2xl redress text-[#408C2B] text-center mb-20'>Sharrie's Signature</h2>
+      <h2 className='md:text-2xl redress text-[#408C2B] text-center mb-20 text-xl mt-10'>Sharrie's Signature</h2>
     </>
   );
 };
@@ -107,40 +107,3 @@ export const footerSections = [
   }
 ];
 
-
-
-
-
-
-// export default function Footer() {
-//   return (
-//     <div className="border-y-[1px] border-[#DFDFDF] w-full">
-//       <ul className="flex justify-between w-[80%] m-auto">
-//         <li className="flex-1">
-//           <p className="text-[#818181] mb-8">About us</p>
-//           <p>Shop</p>
-//           <p>Our Story</p>
-//           <p>Blog</p>
-//         </li>
-        
-//         <li className="flex-1">
-//           <p className="text-[#818181] mb-8">Help</p>
-//           <p>You can <a href="#" className="text-[#408C2B] underline">email us</a></p>
-//           <p>FAQ</p>
-//           <p>Shipping</p> 
-//         </li>
-//         <li className="flex-1">
-//           <p className="text-[#818181] mb-8">Socials</p>
-//           <p>Facebook</p>
-//           <p>Instagram</p>
-//           <p>Twitter</p>
-//         </li>
-//         <li className="flex-1">
-//           <p className="text-[#818181] my-8">Email Sign-up</p>
-//           <p> <a href="#" className="text-[#408C2B] underline">Sign up</a> for Sharrie’s signature emails and receive latest news including exclusive offers</p>
-//           <p>Follow us</p>
-//         </li>
-//       </ul>
-//     </div>
-//   )
-// }
