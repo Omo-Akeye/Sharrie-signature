@@ -22,7 +22,7 @@ export default function Productdetails() {
   return (
     <div>
       <section className="grid md:grid-cols-2 xl:gap-32 md:gap-24 gap-16">
-        <div className="md:-mt-[65px] -mt-[90px]">
+        <div className="md:-mt-[65px] -mt-[120px]">
           <img src={product.src} alt="" className="md:w-[50vw] w-full md:h-[100vh] h-[435px] object-cover"/>
         </div>
         <section className="md:mt-20 xl:mt-44 md:mr-[10%] max-md:mx-[10%]">
