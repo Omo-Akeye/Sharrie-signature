@@ -18,7 +18,7 @@ export default function Community() {
                 <div className='flex items-end'>
                 <img src={img1} alt="" className='xl:w-72 xl:h-[300px] md:w-60 md:h-52 rounded-md object-cover h-[100px] w-[100px] ' />
                 </div>
-                <img src={img2} alt="" className='xl:w-96 xl:h-[341px] rounded-md object-cover md:w-72 w-36 h-32 ' />
+                <img src={img2} alt="" className='xl:w-96 xl:h-[341px] rounded-md object-cover md:w-72 md:h-80  w-36 h-32 ' />
             </div>
             <div className='flex md:gap-12 md:mt-8 gap-3 mt-3 max-md:justify-end'>
                 <div className='flex items-end'>

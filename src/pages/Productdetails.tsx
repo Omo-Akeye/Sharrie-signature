@@ -1,16 +1,17 @@
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { data } from "../data/data";
 import MightLike from "../ui/MightLike";
 import chevron from '../assets/chevron-down.svg'
 import chevronup from '../assets/chevron-up.svg'
 import CartBtn from "../components/CartBtn";
+import chevBck from "../assets/Frame 70.svg"
 import { useState } from "react";
 
 
 export default function Productdetails() {
   const [Toggle,setToggle] = useState(false)
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const {name} = useParams();
   const product = data.find(p => p.name === (name));
 
@@ -22,7 +23,8 @@ export default function Productdetails() {
   return (
     <div>
       <section className="grid md:grid-cols-2 xl:gap-32 md:gap-24 gap-16">
-        <div className="md:-mt-[65px] -mt-[120px]">
+        <div className="md:-mt-[17%] -mt-[120px]">
+          <img src={chevBck} alt="" className="absolute top-[15%] left-[5%] cursor-pointer" onClick={()=>navigate(-1)}/>
           <img src={product.src} alt="" className="md:w-[50vw] w-full md:h-[100vh] h-[435px] object-cover"/>
         </div>
         <section className="md:mt-20 xl:mt-44 md:mr-[10%] max-md:mx-[10%]">
