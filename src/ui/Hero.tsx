@@ -8,8 +8,8 @@ export default function Hero() {
        <article className="m-auto text-center xl:pt-32 md:pt-28 w-[90%] pt-[70px]">
        <h1 className="xl:text-[64px] lora font-extrabold capitalize md:text-[52px] mb-6 text-2xl">Unveil your natural radiance</h1>
        <div className="md:w-[70%] m-auto">
-       <p className="md:text-xl font-normal xl:text-2xl mb-14 text-xs">From radiant serums to hydrating moisturizers, experience the ultimate in skincare indulgence</p>
-       <Button to="featured">Exlplore</Button>
+       <p className="text-xs font-normal md:text-xl xl:text-2xl mb-14">From radiant serums to hydrating moisturizers, experience the ultimate in skincare indulgence</p>
+       <Button >Exlplore</Button>
        </div>
        </article>
     </div>

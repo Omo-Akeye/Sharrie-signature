@@ -4,9 +4,13 @@ import Homepage from "./pages/Homepage"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Productdetails from "./pages/Productdetails"
 import Cart from "./pages/Cart"
+import ProductPage from "./pages/ProductPage"
+
+
 
 
 function App() {
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -16,13 +20,16 @@ function App() {
         {
           path: '/',
           element: <Homepage/>
-       }, {
+       }, 
+       {
         path:'/:name',
         element:<Productdetails/>
-     }, {
+     },
+      {
       path:'/cart',
       element:<Cart/>
-   }
+   },{ path :'/product',
+      element:<ProductPage/>}
      ]}
       ])
   

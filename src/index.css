@@ -20,5 +20,9 @@
   }
   .spacing2 {
     letter-spacing: 5px;
+    background-image: url();
   }
 
+.prod-g {
+  background-image: url('../src//assets/product-bg.png');
+}
