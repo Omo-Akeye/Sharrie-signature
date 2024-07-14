@@ -11,7 +11,7 @@ export default function EmptyCart() {
            
             <h1 className='text-[#0A0B0A] font-semibold text-[28px] mt-12 mb-6 text-xl'>Your cart is empty</h1>
             <p className='text-[#818181] md:mb-12 max-md:text-xs mb-8'>Explore our collections today and start your journey towards radiant beauty. Your skin will thank you</p>
-            <Link to={'/'}>
+            <Link to={'/product'}>
             <button className='bg-[#408C2B] text-white text-sm px-4 py-3 rounded-md w-40'>Start shopping</button>
             </Link>
             

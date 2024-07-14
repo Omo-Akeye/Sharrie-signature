@@ -1,9 +1,14 @@
 import Product from "../components/Product";
+import useFetchProducts from "../hooks/fetchProducts";
 
 
 
 export default function MightLike() {
-  // const reversedProducts = [...data].reverse().slice(0, 6);
+  const { data, status, error } = useFetchProducts();
+  if (status === 'loading') return <div>Loading...</div>;
+  if(!data) return null;
+  if (error) return <div>ERROR</div>
+  const mightLike = data.reverse().slice(0,6)
   return (
     <div className="w-[90%] m-auto md:mt-24 mt-12">
        <div className='text-xl font-light border-b-[1px] mb-10 pb-4 flex justify-between'>
@@ -11,7 +16,7 @@ export default function MightLike() {
         <span className="text-[#408C2B] text-sm font-light">view all</span>
        </div>
        <section>
-       <Product products={[]}/>
+       <Product products={mightLike}/>
        </section>
     </div>
   )

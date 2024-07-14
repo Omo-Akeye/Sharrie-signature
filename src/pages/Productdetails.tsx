@@ -9,6 +9,9 @@ import useFetchProducts from "../hooks/fetchProducts";
 
 export default function Productdetails() {
   const { data, status, error } = useFetchProducts();
+  if (status === 'loading') return <div>Loading...</div>;
+  if(!data) return null;
+  if (error) return <div>ERROR</div>
   const getImageUrl = (imagePath: string): string => {
     return `https://api.timbu.cloud/images/${imagePath}`;
   };

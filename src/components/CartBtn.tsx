@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../cartSlice/cartSlice";
+import { Product } from "../store"
 
 interface CartBtnProps {
   product: Product;
@@ -16,7 +17,7 @@ export default function CartBtn({ product }: CartBtnProps) {
       id: product.id,
       name: product.name,
       quantity: 1,
-      src: product.photos[0]?.url, // Including image source
+      src: `https://api.timbu.cloud/images/${product.photos[0]?.url}`, 
       price: product.current_price[0].NGN,
       totalPrice: product.current_price[0].NGN * 1,
     };

@@ -12,9 +12,9 @@ export default function OurProducts() {
         <div className='md:mt-24 mt-9'>
             <div className='flex items-center gap-4'>
                 <span className='md:w-4 md:h-4 w-3 h-3 bg-[#2A5C1C]'></span>
-                <h1 className='font-light md:text-2xl text-sm spacing1'>Our Product</h1>
+                <h1 className='text-sm font-light md:text-2xl spacing1'>Our Product</h1>
             </div>
-            <h1 className='font-bold text-black lora mt-8 mb-4 md:text-6xl text-3xl'>Unlock Your Glow</h1>
+            <h1 className='mt-8 mb-4 text-3xl font-bold text-black lora md:text-6xl'>Unlock Your Glow</h1>
             <p className='text-[#474747] md:text-base text-sm'>Explore our collection and transform your skincare routine with Sharrie’s Signature touch. Your journey to luminous, flawless skin starts here.</p>
             <div className='[&_span]:flex [&_span]:items-center md:text-sm [&_span]:gap-5 [&_span]:mb-6 mt-8 text-xs [&_img]:w-[14px] [&_img]:h-[14px]'>
                 <span >
@@ -33,8 +33,8 @@ export default function OurProducts() {
                 
             </div>
 
-            <div className='md:my-12 my-8'>
-              <Button to='featured'>Shop Now</Button>
+            <div className='my-8 md:my-12'>
+              <Button >Shop Now</Button>
             </div>
         </div>
       </main>

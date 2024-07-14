@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { Product } from "../store"; // Adjust the path as necessary
 
-interface CartItem {
-  id: string;
-  name: string;
-  quantity: number;
-  src: string; // Including src in CartItem
+interface CartItem extends Product {
+  src: string | undefined;
   price: number;
+  quantity: number;
   totalPrice: number;
 }
 
@@ -28,7 +27,7 @@ const cartSlice = createSlice({
         item.quantity += 1;
         item.totalPrice = item.quantity * item.price;
       } else {
-        state.cart.push(action.payload);
+        state.cart.push({ ...action.payload, totalPrice: action.payload.price });
       }
     },
     increaseItem(state, action) {
@@ -55,7 +54,6 @@ const cartSlice = createSlice({
 
 export const { addItem, decreaseItem, increaseItem, deleteItem } = cartSlice.actions;
 
-// Selector to compute total price
 export const selectTotalPrice = (state: RootState) => 
   state.cart.cart.reduce((total: number, item: CartItem) => total + item.totalPrice, 0);
 

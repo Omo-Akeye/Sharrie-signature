@@ -1,7 +1,12 @@
 import Product from "../components/Product";
-
+import useFetchProducts from "../hooks/fetchProducts";
 
 export default function ProductPage() {
+  const { data, status, error } = useFetchProducts();
+  if (status === 'loading') return <div>Loading...</div>;
+  if(!data) return null;
+  if (error) return <div>ERROR</div>
+  const product = data
   return (
     <div>
     <section className="w-full bg-center bg-cover prod-g h-[356px] pt-[106px]">
@@ -11,7 +16,10 @@ export default function ProductPage() {
      with nature’s  finest ingredients</h1>
      </div>
     </section>
-    <Product products={[]}/>
+    <main className="my-12 w-[90%] m-auto">
+    <Product products={product}/>
+    </main>
+    
     </div>
   )
 }

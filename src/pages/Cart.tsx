@@ -1,210 +1,97 @@
-
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { RootState } from '../store';
-
 import EmptyCart from '../ui/EmptyCart';
 import MightLike from '../ui/MightLike';
 import deleteBtn from '../assets/Delete.png';
-import { deleteItem, decreaseItem, increaseItem } from '../cartSlice/cartSlice';
+// import { deleteItem, decreaseItem, increaseItem } from '../cartSlice/cartSlice';
 
-interface CartItem {
-  id: number;
-  name: string;
-  src: string;
-  price: number;
-  quantity: number;
-}
-
-export default function Cart() {
-  const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart.cart);
-  console.log(cart);
-  
-  const handleIncrease = (id: number) => {
-    dispatch(increaseItem(id));
-  };
-
-  const handleDecrease = (id: number) => {
-    dispatch(decreaseItem(id));
-  };
-
-  const handleDelete = (id: number) => {
-    dispatch(deleteItem(id));
-  };
-
-  const calculateSubtotal = () => {
-    return cart.reduce((total, item) => total + item.totalPrice, 0);
-  };
-
-  const deliveryCost = 2.00;
-  const subtotal = calculateSubtotal();
-  const totalAmount = subtotal + deliveryCost;
-  
-  return (
-    <div className='w-[90%] m-auto'>
-      {
-        cart.length > 0 ? (
-          <section>
-            <div>
-              <h2>Cart</h2>
-            </div>
-            <main className='flex justify-between'>
-              <ul>
-                {cart.map((item) => (
-                  <li key={item.id} className='flex gap-32'>
-                    <div>
-                      <img src={item.src} alt={item.name} className='w-[305px] h-[344px] object-cover' />
-                      <div>
-                        <p className='text-[#6E6E6E] font-light'>RS34670</p>
-                        <h2 className='mt-6 mb-16'>{item.name}</h2>
-                        <p>unit price</p>
-                        <span className='flex '>
-                          <div className='flex'>
-                            <button onClick={() => handleDecrease(item.id)}>-</button>
-                            <p>{item.quantity}</p>
-                            <button onClick={() => handleIncrease(item.id)}>+</button>
-                          </div>
-                          <img src={deleteBtn} alt="Delete" onClick={() => handleDelete(item.id)} className='w-[91px] h-16 cursor-pointer'/>
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div>
-                <h1>Cart Summary</h1>
-                <span className='flex'>
-                  <p>Sub-total</p>
-                  <p>${subtotal.toFixed(2)}</p>
-                </span>
-                <span className='flex'>
-                  <p>Delivery</p>
-                  <p>${deliveryCost.toFixed(2)}</p>
-                </span>
-                <section className='flex'>
-                <button>Cancel</button>
-                  <span>
-                    <p>Total amount</p>
-                    <p>${totalAmount.toFixed(2)}</p>
-                  </span>
-                  <button>Checkout</button>
-                </section>
-              </div>
-            </main>
-          </section>
-        ) : (<EmptyCart/>)
-      }
-      <MightLike/>
-    </div>
-  );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import product from '../assets/Frame 31 (1).jpg'
-// import EmptyCart from '../ui/EmptyCart'
-// import MightLike from '../ui/MightLike'
-// import deleteBtn from '../assets/Delete.png'
-// import {  useDispatch, useSelector } from 'react-redux';
-
-// interface cartItem {
+// interface CartItem {
 //   id: number;
 //   name: string;
 //   src: string;
 //   price: number;
-//   quantity: number
+//   quantity: number;
+//   totalPrice: number;
 // }
-// export default function Cart() {
-//   const dispatch = useDispatch()
-//   const cart = useSelector((state: RootState) => state.cart.cart);
-//   console.log(cart);
-  
-  
-//   return (
-//     <div className='w-[90%] m-auto'>
-//       {
-//         cart.length > 0 ?  (
-//           <section>
-//           <div>
-//             <h2>Cart</h2>
-//           </div>
-//           <main className='flex justify-between'>
-//             <ul>
 
-//             {cart.map((carts):cartItem => {
-//              <li className='flex gap-32'>
-//                   <div >
-//               <img src={} alt="" className='w-[305px] h-[344px] object-cover' />
-//               <div>
-//                 <p className='text-[#6E6E6E] font-light'>RS34670</p>
-//                 <h2 className='mt-6 mb-16'>{carts.name}</h2>
-//                 <p>unit price</p>
-//                 <span className='flex '>
-//                   <div className='flex'><p>-</p> <p>1</p> <p>+</p></div>
-//                   <img src={deleteBtn} alt="" className='w-[91px] h-16'/>
-//                 </span>
-//               </div>
-//             </div>
-//              </li>
-//             })}
-//             </ul>
-           
-//             <div>
-//               <h1>Cart Summary</h1>
-//               <span className='flex'>
-//                 <p>Sub-total</p>
-//                 <p>$19.00</p>
-//               </span>
-//               <span className='flex'>
-//                 <p>Delivery</p>
-//                 <p>$2.00</p>
-//               </span>
-//               <section className='flex'>
-//                 <button>Cancel</button>
-//                 <span>
-//                   <p>Total amount</p>
-//                   <p>$19</p>
-//                 </span>
-//                 <button>Checkout</button>
-//               </section>
-//             </div>
-//           </main>
-//         </section>
-//         ) : (<EmptyCart/>) 
-//       }
-    
+export default function Cart() {
+  // const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart.cart);
   
-//      <MightLike/>
-//     </div>
-//   )
-// }
+  // const handleIncrease = (id: number) => {
+  //   dispatch(increaseItem(id));
+  // };
+
+  // const handleDecrease = (id: number) => {
+  //   dispatch(decreaseItem(id));
+  // };
+
+  // const handleDelete = (id: number) => {
+  //   dispatch(deleteItem(id));
+  // };
+
+  // const calculateSubtotal = () => {
+  //   return cart.reduce((total, item) => total + item.totalPrice, 0);
+  // };
+
+  // const deliveryCost = 2.00;
+  // const subtotal = calculateSubtotal();
+  // const totalAmount = subtotal + deliveryCost;
+  
+  return (
+    <div className='w-[90%] m-auto'>
+      {cart.length > 0 ? (
+        <section>
+          <div className='border-b-[2px] mb-16'>
+            <h2>Cart</h2>
+          </div>
+          <main className='grid justify-between md:flex'>
+            <ul>
+              {cart.map((item) => (
+                <li key={item.id} className='flex gap-32 mt-6'>
+                  <div className='flex gap-5 md:gap-28'>
+                    <img src={item.src} alt={item.name} className='xl:w-[305px] xl:h-[344px] md:h-64 md:w-64 w-[100px] h-[120px] rounded-lg object-cover' />
+                    <div className='max-md:text-sm'>
+                      <p className='text-[#6E6E6E] font-light'>RS34670</p>
+                      <h2 className='mt-6 md:mb-16'>{item.name}</h2>
+                      <p className='text-[#797A7B] '>unit price</p>
+                      <p className='font-bold'>{item.price}</p>
+                      <span className='flex gap-5'>
+                        <div className='flex border-[1px] md:gap-12 gap-4 items-center px-4 font-semibold'>
+                          <button >-</button>
+                          <p className=''>{item.quantity}</p>
+                          <button >+</button>
+                        </div>
+                        <img src={deleteBtn} alt="Delete"  className='w-[50px] h-[36px] cursor-pointer' />
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className='border-[2px] xl:w-[433px] h-[320px] text-center p-11 max-md:mt-11'>
+              <h1 className='font-semibold'>Cart Summary</h1>
+              <span className='flex justify-between my-4'>
+                <p>Sub-total</p>
+                <p>$779</p>
+              </span>
+              <span className='flex justify-between'>
+                <p>Delivery</p>
+                <p>$965</p>
+              </span>
+              <section className='flex items-center justify-between gap-2 my-4'>
+                <button className='text-sm border-[1px] px-4 py-2 rounded-md'>Cancel</button>
+                <span className=''>
+                  <p>Total amount</p>
+                  <p>$5685</p>
+                </span>
+                <button className='bg-[#408C2B] text-sm px-4 rounded-md py-2 text-white'>Checkout</button>
+              </section>
+            </div>
+          </main>
+        </section>
+      ) : (<EmptyCart />)}
+      <MightLike />
+    </div>
+  );
+}
