@@ -25,10 +25,10 @@ export default function Product({products}:ProductProps) {
                 alt={product.name}
                 className="xl:w-[413px] xl:h-80 object-cover md:w-96 md:h-72 w-40 h-40 rounded-[16px]"
               />
-              <div className="border-t-[1px] mt-6 pt-3 flex justify-between md:px-3 flex-shrink-0">
+              <div className="border-t-[1px] mt-6 pt-3 md:px-3  grid grid-cols-2">
                 <span>
-                  <p className="text-[#797A7B] md:text-base text-xs">{product.name}</p>
-                  <p className="text-sm font-medium md:text-base">
+                  <p className="text-[#797A7B] md:text-base text-xs truncate">{product.name}</p>
+                  <p className="text-sm font-medium md:text-base max-sm:text-xs">
                   ₦ {product.current_price[0].NGN}
                   </p>
                 </span>
